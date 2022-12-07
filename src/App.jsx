@@ -1,6 +1,5 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-
 import HomePage from "./pages/HomePage/HomePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import SignupPage from "./pages/SignupPage/SignupPage";
@@ -9,8 +8,12 @@ import Navigation from "../src/pages/HomePage/Navigation";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
 import Sell from "./pages/Products/Sell"
+import Products from "./pages/Products/Products"
+
 
 function App() {
+
+
   return (
     <div className="App">
       <Navigation />
@@ -60,10 +63,18 @@ function App() {
           }
         />
         <Route
-          path="/sell"
+          path="/product/new"
           element={
             <IsPrivate>
               <Sell />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/products"
+          element={
+            <IsPrivate>
+              <Products />
             </IsPrivate>
           }
         />

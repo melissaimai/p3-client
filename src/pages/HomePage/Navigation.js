@@ -29,14 +29,14 @@ const Navigation = () => {
       <Navbar expand="lg" className="color-nav">
         <Container>
           <Navbar.Brand style={{ fontWeight: 'bold', color: "#d74f23" }} href="/">MyStore</Navbar.Brand>
-          <Navbar.Brand style={{ fontSize: '20px' }} href="/list">Browse</Navbar.Brand>
+          <Navbar.Brand style={{ fontSize: '20px' }} href="/products">Browse</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
           {isLoggedIn && (
             <Navbar.Collapse id="basic-navbar-nav">
 
               <Nav className="justify-content-end flex-grow-1 pe-3 align-items-center">
-                <Nav.Link href="/sell">
+                <Nav.Link href="/product/new">
                   <button className="sell-btn">Sell Now</button>
                 </Nav.Link>
                 <Nav.Link href="/messages">
@@ -51,7 +51,7 @@ const Navigation = () => {
               <NavDropdown title={UserMenu}>
                 <NavDropdown.Item href="/profile">My profile</NavDropdown.Item>
                 <NavDropdown.Item href="/mylist">My items</NavDropdown.Item>
-                <NavDropdown.Item href="/sell">Sell Now</NavDropdown.Item>
+                <NavDropdown.Item href="/product/new">Sell Now</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={logOutUser} href="/"> <FontAwesomeIcon icon={faRightFromBracket} /> Logout</NavDropdown.Item>
               </NavDropdown>
