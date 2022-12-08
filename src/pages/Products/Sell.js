@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
 import "./sell.css"
 
 const Sell = () => {
@@ -34,12 +33,12 @@ const Sell = () => {
           <h3>Register a new product</h3>
           {/* controlId="formFileMultiple" */}
 
-          <Form.Label htmlFor="img" className="register-label">Upload picures</Form.Label>
-          <Form.Control type="file" name="img" value={img} onChange={(e) => { setImg(e.target.value) }} multiple />
+          <Form.Label htmlFor="img" className="register-label">Upload a picure</Form.Label>
+          <Form.Control type="text" value={img} onChange={(e) => { setImg(e.target.value) }} required />
 
           <div className="register-form-wrapper">
             <label htmlFor='title' className="register-label">Title</label>
-            <input type="text" name='title' value={title} onChange={(e) => { setTitle(e.target.value) }} className="form-control" />
+            <input type="text" name='title' value={title} onChange={(e) => { setTitle(e.target.value) }} className="form-control" required />
           </div>
           <div className="register-form-wrapper">
             <label className="register-label">Price</label>
@@ -47,11 +46,11 @@ const Sell = () => {
               value={price}
               onChange={(e) => {
                 setPrice(e.target.value);
-              }} min="0" className="form-control" />
+              }} min="0" className="form-control" required />
           </div>
           <div className="register-form-wrapper">
             <label htmlFor='description' className="register-label">Describe your Item</label>
-            <textarea type="textarea" name='description' value={description} onChange={(e) => { setDescription(e.target.value) }} className="form-control" />
+            <textarea type="textarea" name='description' value={description} onChange={(e) => { setDescription(e.target.value) }} className="form-control" required />
           </div>
 
           <button className="register-btn" type="submit">Register Now</button>

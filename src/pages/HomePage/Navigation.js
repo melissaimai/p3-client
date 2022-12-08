@@ -13,31 +13,24 @@ import "./Navigation.css"
 
 const Navigation = () => {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
-
   const UserMenu = (
     <Image
       src={'https://github.com/mshaaban0.png'}
       alt="UserName profile image"
       roundedCircle
       style={{ width: '40px' }}
-    />
-  )
-
-
-
+    />)
 
   return (
     <div className='Navigation'>
       <Navbar expand="lg" className="color-nav">
         <Container>
-          <img className="p-1" style={{ width: "40px" }} src={logo} alt="logo" />
-          <Navbar.Brand style={{ fontWeight: 'bold', color: "#d74f23" }} href="/">MyStore</Navbar.Brand>
-          <Navbar.Brand style={{ fontWeight: 'bold', fontSize: '19px' }} href="/products">Browse</Navbar.Brand>
+          <Navbar.Brand style={{ fontWeight: 'bold', color: "#d74f23" }} href="/">
+            <img className="pr-1" style={{ width: "40px" }} src={logo} alt="logo" />MyStore</Navbar.Brand>
+          <Navbar.Brand className="btn btn-outline-light" style={{ fontWeight: 'bold', fontSize: '19px' }} href="/products">Browse</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
           {isLoggedIn && (
             <Navbar.Collapse id="basic-navbar-nav">
-
               <Nav className="justify-content-end flex-grow-1 pe-3 align-items-center">
                 <Nav.Link href="/product/new">
                   <button className="sell-btn">Sell Now</button>
@@ -48,8 +41,6 @@ const Navigation = () => {
                 <Nav.Link href="/favorites">
                   <FontAwesomeIcon className='nav-icon' icon={faHeart} size="lg" />
                 </Nav.Link>
-                {/* <img src={home} alt="home" width="42" height="42" /> */}
-                {/* <img src="https://picsum.photos/id/402/200/300" style={{ width: 50, height: 50, borderRadius: 25 }} alt="profile" /> */}
               </Nav>
               <NavDropdown title={UserMenu}>
                 <NavDropdown.Item href="/profile">My profile</NavDropdown.Item>
@@ -63,7 +54,6 @@ const Navigation = () => {
               <span style={{ fontWeight: 'bold' }}>{"?"}</span>
             </Navbar.Collapse>
           )}
-
           {!isLoggedIn && (
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="justify-content-end flex-grow-1 pe-3">
@@ -72,13 +62,9 @@ const Navigation = () => {
               </Nav>
             </Navbar.Collapse>
           )}
-
-
         </Container>
       </Navbar >
-
     </div >
   );
 }
-
 export default Navigation;

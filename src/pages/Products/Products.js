@@ -42,6 +42,11 @@ const Products = () => {
               <Search handleSearch={handleSearch} input={input} />
             </div>
           </li>
+          <li className="breadcrumb-item">
+            <div className="input-group ml-3 mt-1" style={{ fontWeight: 'bold', fontSize: '19px' }} >
+              Product list
+            </div>
+          </li>
         </ol>
       </nav>
 

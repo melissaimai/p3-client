@@ -60,7 +60,7 @@ function LoginPage() {
           <form onSubmit={handleLoginSubmit}>
             <h3 className="login-a-h3">Login</h3>
             <div className="form-holder active">
-              <input type="email" name="email" placeholder="name" className="login-form-control" value={email} onChange={handleEmail} />
+              <input type="email" name="email" placeholder="e-mail" className="login-form-control" value={email} onChange={handleEmail} />
             </div>
 
             <div className="form-holder">

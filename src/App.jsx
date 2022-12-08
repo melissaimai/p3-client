@@ -10,6 +10,7 @@ import IsAnon from "./components/IsAnon/IsAnon";
 import Sell from "./pages/Products/Sell"
 import Products from "./pages/Products/Products"
 import ProductDetail from "./pages/Products/ProductDetail";
+import MyList from "./pages/ProfilePage/MyList";
 function App() {
 
 
@@ -76,14 +77,21 @@ function App() {
           }
         />
         <Route
-          path="/products/detail"
+          path="/product/detail/:productId"
           element={
             <IsPrivate>
               <ProductDetail />
             </IsPrivate>
           }
         />
-
+        <Route
+          path="/mylist"
+          element={
+            <IsPrivate>
+              <MyList />
+            </IsPrivate>
+          }
+        />
 
       </Routes>
     </div>

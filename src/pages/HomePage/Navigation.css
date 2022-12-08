@@ -34,8 +34,8 @@ background-color: #fff;
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 990px) {
   #basic-navbar-nav{
-  padding-left: 33px;
+  padding-left: 70px;
   }
 }

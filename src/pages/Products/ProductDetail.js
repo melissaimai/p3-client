@@ -1,25 +1,64 @@
-import Image from "../Products/images/registration-form-2.jpg";
-import { Link } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import ScrollToTopOnMount from "../../components/ScrollToTopOnMount";
-
+import axios from "axios";
+import { useEffect, useState, useContext } from "react";
+import { AuthContext } from "../../context/auth.context.jsx";
+import { faHeart, faCartPlus, faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ProductDetail = () => {
+  const { productId } = useParams()
+  const [product, setProduct] = useState([]);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    const storedToken = localStorage.getItem("authToken");
+    axios
+      .get(`http://localhost:5005/api/product/detail/${productId}`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((response) => {
+        setProduct(response.data)
+      });
+  }, [productId]);
+
+  function handleEdit(e) {
+    e.preventDefault();
+    navigate(`/product/${productId}/edit`);
+  }
+
+  function handleDelete(e) {
+    e.preventDefault();
+    const storedToken = localStorage.getItem("authToken");
+    axios
+      .delete(
+        `${process.env.REACT_APP_SERVER_URL}/api/products/${productId}`,
+        { headers: { Authorization: `Bearer ${storedToken}` } }
+      )
+      .then((response) => {
+        navigate("/products");
+      })
+      .catch((err) => console.log(err));
+  }
 
   return (
     <div className="container mt-3 py-4 px-xl-5">
       <ScrollToTopOnMount />
       <nav aria-label="breadcrumb" className="bg-light rounded mb-4">
         <ol className="breadcrumb p-3">
+
+
           <li className="breadcrumb-item">
             <Link className="text-decoration-none link-secondary" to="/products">
               Back to all products
             </Link>
           </li>
+
+
+
           <li className="breadcrumb-item">
-            <a className="text-decoration-none link-secondary">
-              Title
-            </a>
+            {product?.title}
           </li>
         </ol>
       </nav>
@@ -30,13 +69,13 @@ const ProductDetail = () => {
               {Array.from({ length: 1 }, (_, i) => {
                 let selected = i !== 1 ? "opacity-6" : "";
                 return (
-                  <a key={i}>
+                  <div key={i}>
                     <img
                       className={"rounded mb-2 ratio " + selected}
                       alt=""
-                      src={Image}
+                      src={product.img}
                     />
-                  </a>
+                  </div>
                 );
               })}
             </div>
@@ -48,7 +87,7 @@ const ProductDetail = () => {
               <img
                 className="border rounded ratio ratio-1x1"
                 alt=""
-                src={Image}
+                src={product.img}
               />
             </div>
           </div>
@@ -79,36 +118,50 @@ const ProductDetail = () => {
 
         <div className="col-lg-5">
           <div className="d-flex flex-column h-100">
-            <h2 className="mb-1">Nillkin iPhone X cover</h2>
-            <h4 className="text-muted mb-4">10000 Ks</h4>
-
-            <div className="row g-3 mb-4">
-              <div className="col">
-                <button className="btn btn-outline-dark py-2 w-100">
-                  Add to favorites
-                </button>
-              </div>
-              <div className="col">
-                <button className="btn btn-dark py-2 w-100">Buy now</button>
-              </div>
-            </div>
-
+            <h2 className="mb-1">{product.title}</h2>
+            <h4 className="text-muted mb-4">${product.price}</h4>
             <h4 className="mb-0">Description</h4>
             <hr />
             <p className="lead flex-shrink-0">
               <small>
-                Nature (TPU case) use environmental non-toxic TPU, silky smooth
-                and ultrathin. Glittering and translucent, arbitrary rue
-                reserved volume button cutouts, easy to operate. Side frosted
-                texture anti-slipping, details show its concern; transparent
-                frosted logo shows its taste. The release of self, the flavor of
-                life. Nillkin launched Nature transparent soft cover, only to
-                retain the original phone style. Subverting tradition,
-                redefinition. Thinner design Environmental texture better hand
-                feeling.
+                {product.description}
               </small>
             </p>
+
+
+            {product.createdBy !== user._id && (
+              <div className="row g-3 mb-4">
+                <div className="col">
+                  <button className="btn btn-outline-dark py-2 w-100">
+                    <FontAwesomeIcon icon={faHeart} className="pr-2" />Add to favorites
+                  </button>
+                </div>
+                <div className="col">
+                  <button className="btn btn-dark py-2 w-100">
+                    <FontAwesomeIcon icon={faCartPlus} className="pr-2" />Buy now</button>
+                </div>
+              </div>
+            )}
+
+            {product.createdBy === user._id && (
+              <div className="row g-3 mb-4">
+                <div className="col">
+                  <button className="btn btn-outline-dark py-2 w-100" onClick={handleEdit}>
+                    <FontAwesomeIcon icon={faPenToSquare} className="pr-2" />Edit product
+                  </button>
+                </div>
+                <div className="col">
+                  <button className="btn btn-dark py-2 w-100" onClick={handleDelete}>
+                    <FontAwesomeIcon icon={faTrash} className="pr-2" />Delete product</button>
+                </div>
+              </div>
+            )}
           </div>
+
+
+
+
+
         </div>
       </div>
     </div>
