@@ -5,8 +5,7 @@ const Search = (props) => {
     <div>
       <div >
         <div>
-          <label htmlFor="name">Search</label>
-          <input type="text" value={props.input} onChange={props.handleSearch} required />
+          <label htmlFor="name"><input placeholder="Search products..." className="form-control" type="text" value={props.input} onChange={props.handleSearch} required /></label>
         </div>
       </div>
     </div>

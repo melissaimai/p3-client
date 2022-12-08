@@ -19,7 +19,7 @@ const Sell = () => {
     const body = { img, title, price, description };
 
     axios
-      .post("http://localhost:5005/api/products", body,
+      .post(`${process.env.REACT_APP_SERVER_URL}/api/products`, body,
         { headers: { Authorization: `Bearer ${storedToken}` } })
       .then((response) => {
         // const productId = response.data._id

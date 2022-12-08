@@ -9,8 +9,7 @@ import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
 import Sell from "./pages/Products/Sell"
 import Products from "./pages/Products/Products"
-
-
+import ProductDetail from "./pages/Products/ProductDetail";
 function App() {
 
 
@@ -73,11 +72,19 @@ function App() {
         <Route
           path="/products"
           element={
+            <Products />
+          }
+        />
+        <Route
+          path="/products/detail"
+          element={
             <IsPrivate>
-              <Products />
+              <ProductDetail />
             </IsPrivate>
           }
         />
+
+
       </Routes>
     </div>
   );

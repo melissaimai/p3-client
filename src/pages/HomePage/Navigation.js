@@ -8,7 +8,7 @@ import Image from 'react-bootstrap/Image'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
-
+import logo from "./images/logo.png"
 import "./Navigation.css"
 
 const Navigation = () => {
@@ -24,12 +24,15 @@ const Navigation = () => {
   )
 
 
+
+
   return (
     <div className='Navigation'>
       <Navbar expand="lg" className="color-nav">
         <Container>
+          <img className="p-1" style={{ width: "40px" }} src={logo} alt="logo" />
           <Navbar.Brand style={{ fontWeight: 'bold', color: "#d74f23" }} href="/">MyStore</Navbar.Brand>
-          <Navbar.Brand style={{ fontSize: '20px' }} href="/products">Browse</Navbar.Brand>
+          <Navbar.Brand style={{ fontWeight: 'bold', fontSize: '19px' }} href="/products">Browse</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
           {isLoggedIn && (
@@ -55,7 +58,9 @@ const Navigation = () => {
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={logOutUser} href="/"> <FontAwesomeIcon icon={faRightFromBracket} /> Logout</NavDropdown.Item>
               </NavDropdown>
-              <span className='p-2' style={{ fontWeight: 'bold' }}>{user && "What's Up " + user.name + "?"}</span>
+              <span className='pr-2' style={{ fontWeight: 'bold' }}>{"What's Up"}</span>
+              <span style={{ fontWeight: 'bold', color: "#d74f23" }}>{user && user.name}</span>
+              <span style={{ fontWeight: 'bold' }}>{"?"}</span>
             </Navbar.Collapse>
           )}
 
@@ -67,6 +72,7 @@ const Navigation = () => {
               </Nav>
             </Navbar.Collapse>
           )}
+
 
         </Container>
       </Navbar >

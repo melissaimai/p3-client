@@ -1,13 +1,4 @@
-.dropdown-toggle::after {
-  display: none;
-  color:#f8f6f6;
-}
-
-.color-nav{
-background-color: #fff;
-}
-
-.sell-btn {
+.product-card-btn {
   letter-spacing: 2px;
   border: none;
   width: 123px;
@@ -27,15 +18,9 @@ background-color: #fff;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0); }
-
-.nav-icon{
-  font-size: 1.5em;
-  padding-right: 1px;
-}
-
-
-@media (max-width: 767px) {
-  #basic-navbar-nav{
-  padding-left: 33px;
-  }
-}
+  
+  .card-btn {
+    padding-left: 53px;
+   }
+   
+   

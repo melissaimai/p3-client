@@ -8,7 +8,7 @@ const CarouselComponent = () => {
 
   return (
 
-    <Carousel partialVisible={false}>
+    <Carousel>
       <Carousel.Item id="carousel-item" interval={5000}>
         <img
           className="d-block w-90"

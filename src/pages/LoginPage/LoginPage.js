@@ -1,8 +1,10 @@
 import "./LoginPage.css";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import authService from "../../services/auth.service";
+import login from "./login.png"
+import { func } from '../../helpers/main'
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -15,6 +17,10 @@ function LoginPage() {
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
+
+  useEffect(() => {
+    func()
+  }, [])
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
@@ -45,28 +51,37 @@ function LoginPage() {
   };
 
   return (
-    <div className="LoginPage">
-      <h1>Login</h1>
+    <div className="login-wrapper">
+      <div className="login-inner">
+        <div className="image-holder">
+          <img src={login} alt="login" />
+        </div>
+        <div className="login-form">
+          <form onSubmit={handleLoginSubmit}>
+            <h3 className="login-a-h3">Login</h3>
+            <div className="form-holder active">
+              <input type="email" name="email" placeholder="name" className="login-form-control" value={email} onChange={handleEmail} />
+            </div>
 
-      <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+            <div className="form-holder">
+              <input type="password" name="password" placeholder="Password" className="login-form-control" style={{ fontSize: "15px" }} value={password}
+                onChange={handlePassword}
+              />
+            </div>
+            <div className="form-login">
+              <button type="submit" className="login-btn">Login</button>
+              <p className="login-p">Don't have an account yet?<Link className="login-a" to={"/signup"}> Sign Up</Link></p>
+            </div>
 
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
 
-        <button type="submit">Login</button>
-      </form>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-      <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+          </form>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+        </div>
+      </div>
     </div>
+
+
+
   );
 }
 

@@ -207,12 +207,11 @@ ul {
     display: block; }
 
   .image-holder {
-    width: 100%;
-    padding-right: 0; }
+    display: none; }
 
     .signup-form {
     width: 100%;
-    padding: 0px 15px 70px; }
+    padding: 30px 15px 70px; }
 
   .signup-wrapper {
     background: none; } }

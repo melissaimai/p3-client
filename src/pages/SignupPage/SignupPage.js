@@ -1,8 +1,9 @@
 import "./SignupPage.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import authService from "../../services/auth.service";
-import water from "../../assets/registration.jpg"
+import sign from "./images/back.png"
+import { func } from '../../helpers/main'
 
 function SignupPage() {
   const [email, setEmail] = useState("");
@@ -15,6 +16,10 @@ function SignupPage() {
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
   const handleName = (e) => setName(e.target.value);
+
+  useEffect(() => {
+    func()
+  }, [])
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
@@ -50,7 +55,7 @@ function SignupPage() {
     <div className="signup-wrapper">
       <div className="signup-inner">
         <div className="image-holder">
-          <img src={water} alt="signup" />
+          <img src={sign} alt="signup" />
         </div>
         <div className="signup-form">
           <form onSubmit={handleSignupSubmit}>
