@@ -13,7 +13,6 @@ const ProductCard = ({ product }) => {
 
   return (
     <Card key={product._id} style={{ width: '18rem' }} className="m-5" >
-
       <Card.Body>
         <Link to={`/product/detail/${product._id}`} style={{ textDecoration: 'none', color: "black" }}  >
           <Card.Img variant="top" src={product.img} className="p-2" />

@@ -6,16 +6,20 @@ import ScrollToTopOnMount from "../../components/ScrollToTopOnMount";
 // import { faMagnifyingGlass, faList, faGripVertical } from '@fortawesome/free-solid-svg-icons'
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProductCard from "./ProductCard"
-import "./ProductCard.css"
+import Loading from "../../components/Loading/Loading.jsx"
+import { useContext } from "react";
+import { AuthContext } from "../../context/auth.context";
+
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [searchedList, setSearchedList] = useState([])
   const [input, setInput] = useState("")
+  const { isLoading } = useContext(AuthContext);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5005/api/products")
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/products`)
       .then((response) => {
         setProducts(response.data);
         setSearchedList(response.data)
@@ -51,11 +55,9 @@ const Products = () => {
       </nav>
 
       <div className="row m-4 mt-lg-3">
-        {productList.map((product) => {
-          return (
-            <ProductCard key={product._id} product={product} />
-          );
-        })}
+        {!isLoading ? products.map((product) => {
+          return <ProductCard key={product._id} product={product} />;
+        }) : <Loading />}
       </div>
 
     </div >

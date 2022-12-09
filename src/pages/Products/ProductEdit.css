@@ -42,12 +42,12 @@ a:hover {
   background-size: cover; 
   }
 
-.register-inner {
+.p-edit-inner {
   min-width: 850px;
   margin: auto;
   padding-top: 68px;
   padding-bottom: 48px;
-  background: url("../Products/images/registration-form-2.jpg"); }
+  background: url("../SignupPage/images/bg-registration-form-2.jpg"); }
   .register-inner h3 {
     text-transform: uppercase;
     font-size: 22px;
@@ -87,8 +87,6 @@ a:hover {
     border: 1px solid #ae3c33; }
 
 .register-select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
   cursor: pointer;
   padding-left: 20px; }
   .register-select option[value=""][disabled] {

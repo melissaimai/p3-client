@@ -19,7 +19,7 @@ const MyList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5005/api/products")
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/products`)
       .then((response) => {
         setProducts(response.data);
         setSearchedList(response.data)
@@ -61,6 +61,7 @@ const MyList = () => {
               <ProductCard key={product._id} product={product} />
             );
           }
+          return null;
         })}
       </div>
 

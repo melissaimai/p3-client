@@ -8,7 +8,7 @@ import "./sell.css"
 const Sell = () => {
   const [img, setImg] = useState("");
   const [title, setTitle] = useState("");
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const storedToken = localStorage.getItem('authToken')
   const navigate = useNavigate();

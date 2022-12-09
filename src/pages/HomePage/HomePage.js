@@ -1,8 +1,23 @@
 import Footer from "./Footer";
 import CarouselComponent from "./CarouselComponent";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import ProductCard from "../Products/ProductCard"
 
 const HomePage = () => {
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    setIsLoading(true)
+    axios
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/products`)
+      .then((response) => {
+        setProducts(response.data);
+        setIsLoading(false)
+      });
+  }, []);
 
   return (
     <div className="HomePage">
@@ -22,9 +37,9 @@ const HomePage = () => {
       <h2 className="text-muted text-center mt-4 mb-3">New Arrival</h2>
       <div className="container pb-5 px-lg-5">
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 px-md-5">
-          {/* {Array.from({ length: 6 }, (_, i) => {
-            return <FeatureProduct key={i} />;
-          })} */}
+          {!isLoading ? products.slice(0, 6).map((product) => {
+            return <ProductCard key={product._id} product={product} />;
+          }) : <h1>Loading</h1>}
         </div>
       </div>
 
