@@ -5,12 +5,15 @@ import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../context/auth.context.jsx";
 import { faHeart, faCartPlus, faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import UserCard from "../ProfilePage/UserCard";
+import Loading from "../../components/Loading/Loading.jsx"
 
 const ProductDetail = () => {
   const { productId } = useParams()
   const [product, setProduct] = useState([]);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+  const { isLoading } = useContext(AuthContext);
 
   useEffect(() => {
     const storedToken = localStorage.getItem("authToken");
@@ -58,7 +61,7 @@ const ProductDetail = () => {
 
 
           <li className="breadcrumb-item">
-            {product?.title}
+            {product.title}
           </li>
         </ol>
       </nav>
@@ -128,8 +131,7 @@ const ProductDetail = () => {
               </small>
             </p>
 
-
-            {product.createdBy !== user._id && (
+            {!isLoading ? product.createdBy?._id !== user._id && (
               <div className="row g-3 mb-4">
                 <div className="col">
                   <button className="btn btn-outline-dark py-2 w-100">
@@ -140,10 +142,14 @@ const ProductDetail = () => {
                   <button className="btn btn-dark py-2 w-100">
                     <FontAwesomeIcon icon={faCartPlus} className="pr-2" />Buy now</button>
                 </div>
+                <div className="user-icon">
+                  <UserCard user={product.createdBy} />
+                </div>
               </div>
-            )}
+            ) : <Loading />}
 
-            {product.createdBy === user._id && (
+
+            {!isLoading ? product.createdBy?._id === user._id && (
               <div className="row g-3 mb-4">
                 <div className="col">
                   <button className="btn btn-outline-dark py-2 w-100" onClick={handleEdit}>
@@ -155,13 +161,8 @@ const ProductDetail = () => {
                     <FontAwesomeIcon icon={faTrash} className="pr-2" />Delete product</button>
                 </div>
               </div>
-            )}
+            ) : <Loading />}
           </div>
-
-
-
-
-
         </div>
       </div>
     </div>

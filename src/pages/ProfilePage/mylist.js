@@ -8,14 +8,14 @@ import ScrollToTopOnMount from "../../components/ScrollToTopOnMount";
 import ProductCard from "../Products/ProductCard"
 import "../Products/ProductCard.css"
 import { AuthContext } from "../../context/auth.context.jsx";
-
+import Loading from "../../components/Loading/Loading.jsx"
 
 const MyList = () => {
   const [products, setProducts] = useState([]);
   const [searchedList, setSearchedList] = useState([])
   const [input, setInput] = useState("")
   const { user } = useContext(AuthContext);
-
+  const { isLoading } = useContext(AuthContext);
 
   useEffect(() => {
     axios
@@ -55,14 +55,14 @@ const MyList = () => {
       </nav>
 
       <div className="row m-4 mt-lg-3">
-        {productList.map((product) => {
-          if (product.createdBy === user._id) {
+        {!isLoading ? productList.map((product) => {
+          if (product.createdBy._id === user._id) {
             return (
               <ProductCard key={product._id} product={product} />
             );
           }
           return null;
-        })}
+        }) : <Loading />}
       </div>
 
     </div >

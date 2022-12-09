@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import ProductDetail from "./ProductDetail";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context.jsx";
-
+import UserCard from '../ProfilePage/UserCard';
 
 const ProductCard = ({ product }) => {
   const { user } = useContext(AuthContext);
@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
         </Link>
 
 
-        {product.createdBy !== user._id && (
+        {(product.createdBy._id !== user?._id && (
           <>
             <Link href="/favorites">
               <FontAwesomeIcon className='nav-icon' icon={faHeart} size="lg" />
@@ -34,9 +34,11 @@ const ProductCard = ({ product }) => {
                 <FontAwesomeIcon icon={faCartPlus} /> Buy
               </button>
             </div>
+            <div className='createdby-user'>
+              {/* user={product.createdBy} */}
+            </div>
           </>
-        )}
-
+        ))}
       </Card.Body>
     </Card >
   )

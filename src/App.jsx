@@ -12,6 +12,7 @@ import Products from "./pages/Products/Products"
 import ProductDetail from "./pages/Products/ProductDetail";
 import MyList from "./pages/ProfilePage/MyList";
 import ProductEdit from "./pages/Products/ProductEdit";
+import ProductEditParentComponent from "./pages/Products/ProductEditParentComponent";
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/product/detail/:productId" element={<IsPrivate><ProductDetail /></IsPrivate>} />
         <Route path="/mylist" element={<IsPrivate> <MyList /> </IsPrivate>} />
-        <Route path="/product/:productId/edit" element={<IsPrivate><ProductEdit /></IsPrivate>} />
+        <Route path="/product/:productId/edit" element={<IsPrivate><ProductEditParentComponent /></IsPrivate>} />
 
       </Routes>
     </div>

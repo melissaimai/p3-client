@@ -1,21 +1,21 @@
 import Footer from "./Footer";
 import CarouselComponent from "./CarouselComponent";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import ProductCard from "../Products/ProductCard"
+import Loading from "../../components/Loading/Loading.jsx"
+import { AuthContext } from "../../context/auth.context";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false)
+  const { isLoading } = useContext(AuthContext);
 
   useEffect(() => {
-    setIsLoading(true)
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/api/products`)
       .then((response) => {
         setProducts(response.data);
-        setIsLoading(false)
       });
   }, []);
 
@@ -39,7 +39,7 @@ const HomePage = () => {
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 px-md-5">
           {!isLoading ? products.slice(0, 6).map((product) => {
             return <ProductCard key={product._id} product={product} />;
-          }) : <h1>Loading</h1>}
+          }) : <Loading />}
         </div>
       </div>
 
