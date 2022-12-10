@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import ProductDetail from "./ProductDetail";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context.jsx";
-import UserCard from '../ProfilePage/UserCard';
 
 const ProductCard = ({ product }) => {
   const { user } = useContext(AuthContext);
@@ -14,7 +13,7 @@ const ProductCard = ({ product }) => {
   return (
     <Card key={product._id} style={{ width: '18rem' }} className="m-5" >
       <Card.Body>
-        <Link to={`/product/detail/${product._id}`} style={{ textDecoration: 'none', color: "black" }}  >
+        <Link to={{ pathname: `/product/detail/${product._id}` }} state={{ prevPath: window.location.pathname }} style={{ textDecoration: 'none', color: "black" }} >
           <Card.Img variant="top" src={product.img} className="p-2" />
           <Card.Title>{product.title}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">$ {product.price}</Card.Subtitle>

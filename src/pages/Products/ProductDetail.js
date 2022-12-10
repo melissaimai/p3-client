@@ -1,4 +1,4 @@
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 import ScrollToTopOnMount from "../../components/ScrollToTopOnMount";
 import axios from "axios";
 import { useEffect, useState, useContext } from "react";
@@ -9,7 +9,9 @@ import UserCard from "../ProfilePage/UserCard";
 import Loading from "../../components/Loading/Loading.jsx"
 
 const ProductDetail = () => {
+
   const { productId } = useParams()
+  const location = useLocation()
   const [product, setProduct] = useState([]);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -53,8 +55,8 @@ const ProductDetail = () => {
 
 
           <li className="breadcrumb-item">
-            <Link className="text-decoration-none link-secondary" to="/products">
-              Back to all products
+            <Link className="text-decoration-none link-secondary" to={location.state.prevPath}>
+              Back
             </Link>
           </li>
 

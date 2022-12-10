@@ -1,8 +1,8 @@
 import Form from 'react-bootstrap/Form';
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import "./ProductEdit.css"
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../context/auth.context'
+// import { AuthContext } from '../../context/auth.context'
 import axios from 'axios'
 import service from "../../services/service";
 
@@ -13,7 +13,7 @@ const ProductEdit = ({ product }) => {
   const [description, setDescription] = useState(product.description);
   const navigate = useNavigate();
   const storedToken = localStorage.getItem('authToken')
-  const { user } = useContext(AuthContext)
+  // const { user } = useContext(AuthContext)
 
   // ******** this method handles the file upload ********
   const handleFileUpload = (e) => {
@@ -56,6 +56,7 @@ const ProductEdit = ({ product }) => {
         <form className="register-form" onSubmit={handleSubmit} >
 
           <h3>Sell an item - edit</h3>
+          <img className="edit-img" src={img} alt="" style={{ maxHeight: 250 }} />
           <Form.Label htmlFor="img" className="register-label mt-3">Change the picure</Form.Label>
           <Form.Control type="file" onChange={handleFileUpload} />
 
