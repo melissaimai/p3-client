@@ -35,7 +35,7 @@ a:hover {
 :focus {
   outline: none; }
 
-.register-wrapper {
+.p-edit-wrapper {
   min-height: 100vh;
   display: flex;
   background: url("../SignupPage/images/bg-registration-form-2.jpg") no-repeat center;
@@ -48,12 +48,12 @@ a:hover {
   padding-top: 68px;
   padding-bottom: 48px;
   background: url("../SignupPage/images/bg-registration-form-2.jpg"); }
-  .register-inner h3 {
+  .p-edit-inner h3 {
     text-transform: uppercase;
     font-size: 22px;
     font-family: "Muli-Bold";
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 3px;
     color: #333;
     letter-spacing: 2px; }
 
@@ -157,3 +157,7 @@ a:hover {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px; } }
+
+    .update-img{
+      border-radius: 30px;
+      }

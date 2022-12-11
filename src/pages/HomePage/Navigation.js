@@ -43,7 +43,7 @@ const Navigation = () => {
                 </Nav.Link>
               </Nav>
               <NavDropdown title={UserMenu}>
-                <NavDropdown.Item href="/profile">My profile</NavDropdown.Item>
+                <NavDropdown.Item href={`/profile/${user?._id}`}>My profile</NavDropdown.Item>
                 <NavDropdown.Item href="/mylist">My items</NavDropdown.Item>
                 <NavDropdown.Item href="/product/new">Sell Now</NavDropdown.Item>
                 <NavDropdown.Divider />

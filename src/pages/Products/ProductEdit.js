@@ -2,7 +2,6 @@ import Form from 'react-bootstrap/Form';
 import React, { useState } from "react";
 import "./ProductEdit.css"
 import { useNavigate } from 'react-router-dom';
-// import { AuthContext } from '../../context/auth.context'
 import axios from 'axios'
 import service from "../../services/service";
 
@@ -13,7 +12,6 @@ const ProductEdit = ({ product }) => {
   const [description, setDescription] = useState(product.description);
   const navigate = useNavigate();
   const storedToken = localStorage.getItem('authToken')
-  // const { user } = useContext(AuthContext)
 
   // ******** this method handles the file upload ********
   const handleFileUpload = (e) => {
@@ -51,16 +49,18 @@ const ProductEdit = ({ product }) => {
   }
 
   return (
-    <div className="signup-wrapper">
+    <div className="p-edit-wrapper">
       <div className="p-edit-inner ">
         <form className="register-form" onSubmit={handleSubmit} >
 
           <h3>Sell an item - edit</h3>
-          <img className="edit-img" src={img} alt="" style={{ maxHeight: 250 }} />
+          <div>
+            <img className="update-img p-2" src={img} alt="" style={{ maxHeight: 150 }} />
+          </div>
           <Form.Label htmlFor="img" className="register-label mt-3">Change the picure</Form.Label>
           <Form.Control type="file" onChange={handleFileUpload} />
 
-          <div className="register-form-wrapper">
+          <div className="register-form-wrapper  pt-2">
             <label htmlFor='title' className="register-label">Title</label>
             <input type="text" name='title' value={title} onChange={(e) => { setTitle(e.target.value) }} className="form-control" />
           </div>
@@ -77,12 +77,14 @@ const ProductEdit = ({ product }) => {
             <textarea type="textarea" name='description' value={description} onChange={(e) => { setDescription(e.target.value) }} className="form-control" />
           </div>
           <div className='colunm'>
-            <button className="register-btn" onClick={() => navigate(-1)}>Cancel</button>
-            <button className="register-btn" type="submit">Save changes</button>
+            <div className='d-flex'>
+              <button className="register-btn" onClick={() => navigate(-1)}>Cancel</button>
+              <button className="register-btn" type="submit">Save changes</button>
+            </div>
           </div>
 
         </form>
-      </div>
+      </div >
     </div >
   )
 }

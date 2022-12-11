@@ -11,8 +11,8 @@ import Sell from "./pages/Products/Sell"
 import Products from "./pages/Products/Products"
 import ProductDetail from "./pages/Products/ProductDetail";
 import MyList from "./pages/ProfilePage/MyList";
-import ProductEdit from "./pages/Products/ProductEdit";
 import ProductEditParentComponent from "./pages/Products/ProductEditParentComponent";
+import ProfileEdit from "./pages/ProfilePage/ProfileEdit"
 
 function App() {
 
@@ -23,11 +23,16 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/profile" element={<IsPrivate> <ProfilePage /> </IsPrivate>} />
-        <Route path="/messages" element={<IsPrivate><ProfilePage /></IsPrivate>} />
-        <Route path="/favorites" element={<IsPrivate><ProfilePage /></IsPrivate>} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<IsAnon><LoginPage /></IsAnon>} />
+
+        <Route path="/profile/:userId" element={<IsPrivate> <ProfilePage /> </IsPrivate>} />
+        <Route path="/profile/:userId/edit" element={<IsPrivate> <ProfileEdit /> </IsPrivate>} />
+
+
+        <Route path="/messages" element={<IsPrivate><ProfilePage /></IsPrivate>} />
+        <Route path="/favorites" element={<IsPrivate><ProfilePage /></IsPrivate>} />
+
         <Route path="/product/new" element={<IsPrivate><Sell /></IsPrivate>} />
         <Route path="/products" element={<Products />} />
         <Route path="/product/detail/:productId" element={<IsPrivate><ProductDetail /></IsPrivate>} />

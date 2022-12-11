@@ -42,7 +42,7 @@ const ProductDetail = () => {
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then((response) => {
-        navigate("/products");
+        navigate(-1);
       })
       .catch((err) => console.log(err));
   }
@@ -55,7 +55,7 @@ const ProductDetail = () => {
 
 
           <li className="breadcrumb-item">
-            <Link className="text-decoration-none link-secondary" to={location.state.prevPath}>
+            <Link className="text-decoration-none link-secondary" to={location?.state?.prevPath}>
               Back
             </Link>
           </li>
@@ -134,20 +134,21 @@ const ProductDetail = () => {
             </p>
 
             {!isLoading ? product.createdBy?._id !== user._id && (
-              <div className="row g-3 mb-4">
-                <div className="col">
-                  <button className="btn btn-outline-dark py-2 w-100">
-                    <FontAwesomeIcon icon={faHeart} className="pr-2" />Add to favorites
-                  </button>
+              <>
+                <div className="row g-3 mb-5">
+                  <div className="col">
+                    <button className="btn btn-outline-dark py-2 w-100">
+                      <FontAwesomeIcon icon={faHeart} className="pr-2" />Add to favorites
+                    </button>
+                  </div>
+                  <div className="col">
+                    <button className="btn btn-dark py-2 w-100">
+                      <FontAwesomeIcon icon={faCartPlus} className="pr-2" />Buy now</button>
+                  </div>
+
                 </div>
-                <div className="col">
-                  <button className="btn btn-dark py-2 w-100">
-                    <FontAwesomeIcon icon={faCartPlus} className="pr-2" />Buy now</button>
-                </div>
-                <div className="user-icon">
-                  <UserCard user={product.createdBy} />
-                </div>
-              </div>
+                <UserCard user={product.createdBy} />
+              </>
             ) : <Loading />}
 
 

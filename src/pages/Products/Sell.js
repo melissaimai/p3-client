@@ -50,12 +50,13 @@ const Sell = () => {
       <div className="register-inner">
         <form className="register-form" onSubmit={handleProductSubmit}>
           <h3>Register a new product</h3>
-          {/* controlId="formFileMultiple" */}
-
-          <Form.Label htmlFor="img" className="register-label">Upload a picure</Form.Label>
+          <div>
+            <img className="edit-img p-2" src={img} alt="" style={{ maxHeight: 150 }} />
+          </div>
+          <Form.Label htmlFor="img" className="register-label  mt-3">Upload a picure</Form.Label>
           <Form.Control type="file" onChange={handleFileUpload} required />
 
-          <div className="register-form-wrapper">
+          <div className="register-form-wrapper pt-2">
             <label htmlFor='title' className="register-label">Title</label>
             <input type="text" name='title' value={title} onChange={(e) => { setTitle(e.target.value) }} className="form-control" required />
           </div>

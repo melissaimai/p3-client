@@ -1,21 +1,23 @@
 import './UserCard.css'
-
+import profileImage from './michael-dam.jpg'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const UserCard = ({ user }) => {
 
-
-
   return (
-    <div className="user-infos">
-      <div className="user-card">
-        {/* style={{ backgroundImage: `url(${user?.image})` }} */}
-
-      </div>
-      <div>
-        <p className="user-name" >{user?.name}</p>
-      </div>
-
-    </div>
+    <div>
+      <Link className="user-infos text-decoration-none" to={`/profile/${user?._id}`} >
+        <div className='img-name'>
+          <div className="user-card mr-2" style={{ backgroundImage: `url(${profileImage})` }}>
+            {/* style={{ backgroundImage: `url(${user?.image})` }} */}
+          </div>
+          <p className="user-name text-muted" >{user?.name} </p>
+        </div>
+        <FontAwesomeIcon icon={faAngleRight} className="pr-4" style={{ color: 'black' }} size="xs" />
+      </Link>
+    </div >
   )
 }
 
