@@ -58,7 +58,7 @@ const ProductEdit = ({ product }) => {
             <img className="update-img p-2" src={img} alt="" style={{ maxHeight: 150 }} />
           </div>
           <Form.Label htmlFor="img" className="register-label mt-3">Change the picure</Form.Label>
-          <Form.Control type="file" onChange={handleFileUpload} />
+          <Form.Control type="file" onChange={(e) => handleFileUpload(e)} />
 
           <div className="register-form-wrapper  pt-2">
             <label htmlFor='title' className="register-label">Title</label>
@@ -77,13 +77,12 @@ const ProductEdit = ({ product }) => {
             <textarea type="textarea" name='description' value={description} onChange={(e) => { setDescription(e.target.value) }} className="form-control" />
           </div>
           <div className='colunm'>
-            <div className='d-flex'>
-              <button className="register-btn" onClick={() => navigate(-1)}>Cancel</button>
-              <button className="register-btn" type="submit">Save changes</button>
-            </div>
+            <button className="register-btn" type="submit">Save changes</button>
           </div>
-
         </form>
+        <div className="register-form">
+          <button className="register-btn" onClick={() => navigate(-1)}>Cancel</button>
+        </div>
       </div >
     </div >
   )

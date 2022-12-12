@@ -50,13 +50,13 @@ const ProfileDetails = (props) => {
                 <div className="account-settings">
                   <div className="user-profile">
                     <div className="user-avatar">
-                      {userInfo.image == null ? (
+                      {userInfo.img == null ? (
                         <img className="profile-image"
                           src={defaultImage}
                           alt="profile" />
                       ) :
                         <img className="profile-image"
-                          src={userInfo.image}
+                          src={userInfo.img}
                           alt="profile" />
                       }
                     </div>

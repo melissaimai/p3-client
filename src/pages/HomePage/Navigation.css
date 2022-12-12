@@ -1,6 +1,7 @@
 .dropdown-toggle::after {
   display: none;
-  color:#f8f6f6;
+  /* color:#f8f6f6; */
+  color: #fff;
 }
 
 .color-nav{

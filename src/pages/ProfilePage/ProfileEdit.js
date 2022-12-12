@@ -2,14 +2,13 @@
 import { AuthContext } from "../../context/auth.context";
 import Loading from "../../components/Loading/Loading.jsx";
 import ProfileEditForm from "../ProfilePage/ProfileEditForm";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
 
-const ProfileEdit = (props) => {
+const ProfileEdit = () => {
   const [userInfo, setUserInfo] = useState(null);
-  // const { user } = useContext(AuthContext)
   const { userId } = useParams();
   const storedToken = localStorage.getItem("authToken");
 

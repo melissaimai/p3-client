@@ -10,8 +10,7 @@ const UserCard = ({ user }) => {
     <div>
       <Link className="user-infos text-decoration-none" to={`/profile/${user?._id}`} >
         <div className='img-name'>
-          <div className="user-card mr-2" style={{ backgroundImage: `url(${profileImage})` }}>
-            {/* style={{ backgroundImage: `url(${user?.image})` }} */}
+          <div className="user-card mr-2" style={{ backgroundImage: `url(${user?.img})` }}>
           </div>
           <p className="user-name text-muted" >{user?.name} </p>
         </div>
