@@ -13,9 +13,10 @@ import ProductDetail from "./pages/Products/ProductDetail";
 import MyList from "./pages/ProfilePage/MyList";
 import ProductEditParentComponent from "./pages/Products/ProductEditParentComponent";
 import ProfileEdit from "./pages/ProfilePage/ProfileEdit"
+import CheckoutSuccess from "./pages/Products/CheckoutSucess"
+import NotFound from "./slices/NotFound"
 
 function App() {
-
 
   return (
     <div className="App">
@@ -38,6 +39,11 @@ function App() {
         <Route path="/product/detail/:productId" element={<IsPrivate><ProductDetail /></IsPrivate>} />
         <Route path="/mylist" element={<IsPrivate> <MyList /> </IsPrivate>} />
         <Route path="/product/:productId/edit" element={<IsPrivate><ProductEditParentComponent /></IsPrivate>} />
+
+        <Route path="/checkout-success" element={<CheckoutSuccess />} />
+
+
+        <Route path="*" element={<NotFound />} />
 
       </Routes>
     </div>

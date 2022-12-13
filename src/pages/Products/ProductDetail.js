@@ -7,6 +7,7 @@ import { faHeart, faCartPlus, faTrash, faPenToSquare } from '@fortawesome/free-s
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import UserCard from "../ProfilePage/UserCard";
 import Loading from "../../components/Loading/Loading.jsx"
+import PayButton from "./PayButton";
 
 const ProductDetail = () => {
 
@@ -96,35 +97,12 @@ const ProductDetail = () => {
               />
             </div>
           </div>
-
-          {/* <div className="row mt-2">
-            <div className="col-12">
-              <div
-                className="d-flex flex-nowrap"
-                style={{ overflowX: "scroll" }}
-              >
-                {Array.from({ length: 8 }, (_, i) => {
-                  return (
-                    <a key={i} href="!#">
-                      <img
-                        className="cover rounded mb-2 me-2"
-                        width="70"
-                        height="70"
-                        alt=""
-                        src={Image}
-                      />
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          </div> */}
         </div>
 
         <div className="col-lg-5">
           <div className="d-flex flex-column h-100">
             <h2 className="mb-1">{product.title}</h2>
-            <h4 className="text-muted mb-4">${product.price}</h4>
+            <h4 className="text-muted mb-4">€ {product.price}</h4>
             <h4 className="mb-0">Description</h4>
             <hr />
             <p className="lead flex-shrink-0">
@@ -142,8 +120,7 @@ const ProductDetail = () => {
                     </button>
                   </div>
                   <div className="col">
-                    <button className="btn btn-dark py-2 w-100">
-                      <FontAwesomeIcon icon={faCartPlus} className="pr-2" />Buy now</button>
+                    <PayButton product={product} />
                   </div>
 
                 </div>

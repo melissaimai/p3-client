@@ -62,11 +62,12 @@ const Sell = () => {
           </div>
           <div className="register-form-wrapper">
             <label className="register-label">Price</label>
-            <input type="number" name="price"
+            <input type="number" name="price" min="0.00"
+              step="0.01"
               value={price}
               onChange={(e) => {
                 setPrice(e.target.value);
-              }} min="0" className="form-control" required />
+              }} className="form-control" required />
           </div>
           <div className="register-form-wrapper">
             <label htmlFor='description' className="register-label">Describe your Item</label>
