@@ -64,8 +64,8 @@ const ProfileDetails = (props) => {
                     {/* <h6 className="user-email mb-4">{userInfo.email}</h6> */}
                     {loggedUser._id !== userInfo._id && (
                       <div>
-                        <button className="btn btn-dark">Follow</button>
-                        <button className="btn btn-outline-dark">Message</button>
+                        <a href="/follow" ><button className="btn btn-dark">Follow</button></a>
+                        <a href="/messages" ><button className="btn btn-outline-dark">Message</button></a>
                       </div>
                     )}
 

@@ -15,6 +15,8 @@ import ProductEditParentComponent from "./pages/Products/ProductEditParentCompon
 import ProfileEdit from "./pages/ProfilePage/ProfileEdit"
 import CheckoutSuccess from "./pages/Products/CheckoutSucess"
 import NotFound from "./slices/NotFound"
+import Orders from "./pages/Products/Orders"
+import ComingSoon from "./slices/ComingSoon";
 
 function App() {
 
@@ -30,9 +32,9 @@ function App() {
         <Route path="/profile/:userId" element={<IsPrivate> <ProfilePage /> </IsPrivate>} />
         <Route path="/profile/:userId/edit" element={<IsPrivate> <ProfileEdit /> </IsPrivate>} />
 
-
-        <Route path="/messages" element={<IsPrivate><ProfilePage /></IsPrivate>} />
-        <Route path="/favorites" element={<IsPrivate><ProfilePage /></IsPrivate>} />
+        <Route path="/messages" element={<IsPrivate><ComingSoon /></IsPrivate>} />
+        <Route path="/favorites" element={<IsPrivate><ComingSoon /></IsPrivate>} />
+        <Route path="/follow" element={<IsPrivate><ComingSoon /></IsPrivate>} />
 
         <Route path="/product/new" element={<IsPrivate><Sell /></IsPrivate>} />
         <Route path="/products" element={<Products />} />
@@ -42,6 +44,7 @@ function App() {
 
         <Route path="/checkout-success" element={<CheckoutSuccess />} />
 
+        <Route path="/orders" element={<Orders />} />
 
         <Route path="*" element={<NotFound />} />
 

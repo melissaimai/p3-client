@@ -21,7 +21,7 @@ const ProductDetail = () => {
   useEffect(() => {
     const storedToken = localStorage.getItem("authToken");
     axios
-      .get(`http://localhost:5005/api/product/detail/${productId}`, {
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/product/detail/${productId}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {

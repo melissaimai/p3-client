@@ -3,8 +3,6 @@ import Search from "./Search";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ScrollToTopOnMount from "../../components/ScrollToTopOnMount";
-// import { faMagnifyingGlass, faList, faGripVertical } from '@fortawesome/free-solid-svg-icons'
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProductCard from "./ProductCard"
 import Loading from "../../components/Loading/Loading.jsx"
 import { useContext } from "react";

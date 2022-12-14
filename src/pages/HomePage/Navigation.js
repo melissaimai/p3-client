@@ -7,7 +7,7 @@ import { AuthContext } from "../../context/auth.context";
 import Image from 'react-bootstrap/Image'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEnvelope } from '@fortawesome/free-regular-svg-icons'
-import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { faRightFromBracket, faUser, faBagShopping, faStore, } from '@fortawesome/free-solid-svg-icons'
 import logo from "./images/logo.png"
 import "./Navigation.css"
 import axios from "axios";
@@ -75,9 +75,10 @@ const Navigation = () => {
                 </Nav.Link>
               </Nav>
               {userInfo && <NavDropdown title={UserMenu}>
-                <NavDropdown.Item href={`/profile/${user?._id}`}>My profile</NavDropdown.Item>
-                <NavDropdown.Item href="/mylist">My items</NavDropdown.Item>
-                <NavDropdown.Item href="/product/new">Sell Now</NavDropdown.Item>
+                <NavDropdown.Item href={`/profile/${user?._id}`}><FontAwesomeIcon icon={faUser} className="pr-1" /> My profile</NavDropdown.Item>
+                <NavDropdown.Item href="/orders"><FontAwesomeIcon icon={faBagShopping} className="pr-1" /> My Orders</NavDropdown.Item>
+                <NavDropdown.Item href="/mylist"><FontAwesomeIcon icon={faStore} className="pr-1" />My items</NavDropdown.Item>
+                {/* <NavDropdown.Item href="/product/new">Sell Now</NavDropdown.Item> */}
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={logOutUser} href="/"> <FontAwesomeIcon icon={faRightFromBracket} /> Logout</NavDropdown.Item>
               </NavDropdown>}
