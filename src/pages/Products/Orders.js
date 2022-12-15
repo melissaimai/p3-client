@@ -15,6 +15,7 @@ const Orders = () => {
   const { user } = useContext(AuthContext);
   const [order, setOrder] = useState([]);
 
+
   useEffect(() => {
     const storedToken = localStorage.getItem("authToken");
     axios
@@ -25,6 +26,9 @@ const Orders = () => {
         setOrder(response.data);
       });
   }, []);
+
+  // sold={item.product[0]?.sold}
+  console.log(order)
 
   return (
     <div className="order-details">

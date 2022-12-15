@@ -3,7 +3,7 @@
   color: #2e323c;
   background: #f5f6fa;
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 400px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -106,7 +106,7 @@ td {
 }
 
 .ordercard-tr{
-padding-bottom: 50px;
+padding: 8px;
 }
 
 .ordercard-address{
@@ -119,6 +119,14 @@ border-radius: 1em;
   width: 30%;
   margin-left: 35%;
 }
+
+.ordercard-ordernumber{
+background-color: #eeeeee;
+color:black;
+font-weight: bold;
+
+}
+
 /* 
 .align {
   display: grid;

@@ -90,6 +90,9 @@ const ProductDetail = () => {
         <div className="col-lg-6">
           <div className="row">
             <div className="col-12 mb-4">
+              {(product.sold && (
+                <div className="sold-tag" style={{ backgroundColor: "#32CD32" }}>SOLD</div>
+              ))}
               <img
                 className="border rounded ratio ratio-1x1"
                 alt=""
@@ -113,17 +116,21 @@ const ProductDetail = () => {
 
             {!isLoading ? product.createdBy?._id !== user._id && (
               <>
-                <div className="row g-3 mb-5">
-                  <div className="col">
-                    <button className="btn btn-outline-dark py-2 w-100">
-                      <FontAwesomeIcon icon={faHeart} className="pr-2" />Add to favorites
-                    </button>
-                  </div>
-                  <div className="col">
-                    <PayButton product={product} />
-                  </div>
+                {(!product.sold && (
+                  <div className="row g-3 mb-5">
 
-                </div>
+                    <div className="col">
+                      <button className="btn btn-outline-dark py-2 w-100">
+                        <FontAwesomeIcon icon={faHeart} className="pr-2" />Add to favorites
+                      </button>
+                    </div>
+
+                    <div className="col">
+                      <PayButton product={product} />
+                    </div>
+
+                  </div>
+                ))}
                 <UserCard user={product.createdBy} />
               </>
             ) : <Loading />}

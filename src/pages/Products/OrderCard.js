@@ -52,8 +52,8 @@ const OrderCard = ({ item }) => {
               <h3 className='mb-5'>Shopping Bill</h3>
               <table>
                 <tbody>
-                  <tr>
-                    <td className='ordercard-tr' align="left"> Order Number</td>
+                  <tr className='ordercard-ordernumber' >
+                    <td className='ordercard-tr' align="left"> Order Number #</td>
                     <td className='ordercard-tr' align="right">{item?._id}</td>
                   </tr>
                   <tr>
