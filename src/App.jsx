@@ -10,7 +10,7 @@ import IsAnon from './components/IsAnon/IsAnon';
 import Sell from './pages/Products/Sell';
 import Products from './pages/Products/Products';
 import ProductDetail from './pages/Products/ProductDetail';
-import MyList from './pages/ProfilePage/MyList';
+import MyList from './pages/ProfilePage/mylist';
 import ProductEditParentComponent from './pages/Products/ProductEditParentComponent';
 import ProfileEdit from './pages/ProfilePage/ProfileEdit';
 import NotFound from './slices/NotFound';
