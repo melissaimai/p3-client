@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
         ))}
 
         <Link to={{ pathname: `/product/detail/${product._id}` }} state={{ prevPath: window.location.pathname }} style={{ textDecoration: 'none', color: "black" }} >
-          <Card.Img variant="top" src={product.img} className="p-2" />
+          <Card.Img variant="top" src={product.img} className="card-product-image p-2" />
           <Card.Title>{product.title}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">€ {product.price}</Card.Subtitle>
           <Card.Text>

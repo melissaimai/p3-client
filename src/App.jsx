@@ -16,6 +16,7 @@ import ProfileEdit from './pages/ProfilePage/ProfileEdit';
 import NotFound from './slices/NotFound';
 import Orders from './pages/Products/Orders';
 import ComingSoon from './slices/ComingSoon';
+import AboutMe from './pages/HomePage/AboutMe';
 
 function App() {
   return (
@@ -113,6 +114,8 @@ function App() {
         />
 
         <Route path="/orders" element={<Orders />} />
+
+        <Route path="/aboutme" element={<AboutMe />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

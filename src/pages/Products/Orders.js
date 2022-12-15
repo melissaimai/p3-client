@@ -1,13 +1,8 @@
 import React from "react";
-import Search from "./Search";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import ScrollToTopOnMount from "../../components/ScrollToTopOnMount";
-import ProductCard from "./ProductCard"
-import Loading from "../../components/Loading/Loading.jsx"
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
-import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 import OrderCard from "./OrderCard";
 import "./Orders.css"
 
@@ -26,9 +21,6 @@ const Orders = () => {
         setOrder(response.data);
       });
   }, []);
-
-  // sold={item.product[0]?.sold}
-  // console.log(order) array de objetos
 
   return (
     <div className="order-details">

@@ -1,5 +1,3 @@
-
-import { AuthContext } from "../../context/auth.context";
 import Loading from "../../components/Loading/Loading.jsx";
 import ProfileEditForm from "../ProfilePage/ProfileEditForm";
 import { useState, useEffect } from "react";

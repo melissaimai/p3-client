@@ -10,18 +10,17 @@ const Footer = () => {
       < footer >
         <div className="container">
           <div className="row">
-            <div className="col-sm-6 col-md-3 item">
+            {/* <div className="col-sm-6 col-md-3 item">
               <h3 style={{ fontSize: "22px" }}>Services</h3>
               <ul>
                 <li><a style={{ fontSize: "15px" }} href="/">Web design</a></li>
                 <li><a style={{ fontSize: "15px" }} href="/">Development</a></li>
               </ul>
-            </div>
+            </div> */}
             <div className="col-sm-6 col-md-3 item" >
               <h3 style={{ fontSize: "22px" }}>About</h3>
               <ul>
-                <li><a style={{ fontSize: "15px" }} href="/">About us</a></li>
-                <li><a style={{ fontSize: "15px" }} href="/">Suggestions</a></li>
+                <li><a style={{ fontSize: "15px" }} href="/aboutme">About me</a></li>
               </ul>
             </div>
             <div className="col-sm-6 col-md-3 item">

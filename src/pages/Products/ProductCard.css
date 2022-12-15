@@ -34,3 +34,7 @@
   .isFormHidden {
     display: none;
     } */
+    
+  .card-product-image{ 
+  aspect-ratio: 1 / 1;
+   }
