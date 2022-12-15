@@ -8,7 +8,6 @@ const OrderCard = ({ item }) => {
   const productId = (item.product[0]?._id)
   const address = (item.shipping.address)
 
-
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
@@ -43,7 +42,7 @@ const OrderCard = ({ item }) => {
               />
             </div>
             <div>
-              <div className='pb-1'>{product[0]?.title}</div>
+              <div className='pb-1'>{product?.title}</div>
               <div>€ {item?.total}</div>
             </div>
           </Accordion.Header>

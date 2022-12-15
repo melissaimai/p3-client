@@ -28,7 +28,7 @@ const Orders = () => {
   }, []);
 
   // sold={item.product[0]?.sold}
-  console.log(order)
+  // console.log(order) array de objetos
 
   return (
     <div className="order-details">

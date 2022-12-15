@@ -3,7 +3,7 @@ import ScrollToTopOnMount from "../../components/ScrollToTopOnMount";
 import axios from "axios";
 import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../context/auth.context.jsx";
-import { faHeart, faCartPlus, faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+import { faHeart, faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import UserCard from "../ProfilePage/UserCard";
 import Loading from "../../components/Loading/Loading.jsx"
@@ -28,6 +28,8 @@ const ProductDetail = () => {
         setProduct(response.data)
       });
   }, [productId]);
+
+
 
   function handleEdit(e) {
     e.preventDefault();
