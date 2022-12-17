@@ -4,7 +4,7 @@ import axios from 'axios'
 import ProductEdit from './ProductEdit'
 import Loading from '../../components/Loading/Loading'
 
-const ProductEditParentComponent = (props) => {
+const ProductEditParentComponent = () => {
   const { productId } = useParams()
   const [product, setProduct] = useState(null);
   const storedToken = localStorage.getItem('authToken')

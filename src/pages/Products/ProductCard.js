@@ -6,7 +6,6 @@ import { AuthContext } from "../../context/auth.context.jsx";
 import HeartButton from './HeartButton';
 import PayButton from './PayButton';
 
-
 const ProductCard = ({ product }) => {
   const { user } = useContext(AuthContext);
 
@@ -36,7 +35,6 @@ const ProductCard = ({ product }) => {
                 user={user}
                 product={product}
               />
-              {/* </Link> */}
               <div className="d-grid d-block">
 
                 <PayButton product={product} />

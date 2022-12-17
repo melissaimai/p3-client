@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context.jsx";
 
 const PayButton = ({ product }) => {
-  const { user } = useContext(AuthContext);
+  const { user, isLoggedIn } = useContext(AuthContext);
 
   const handleCheckout = () => {
     axios
@@ -25,11 +25,10 @@ const PayButton = ({ product }) => {
 
   return (
     <>
-      <button onClick={() => handleCheckout()} className="btn btn-outline-dark py-2 w-100">
+
+      <button onClick={() => (isLoggedIn ? handleCheckout() : window.location.href = "/login")} className="btn btn-outline-dark py-2 w-100">
         <FontAwesomeIcon icon={faCartPlus} /> Buy Now
       </button>
-
-      {/* <button onClick={() => handleCheckout()}>Check out</button> */}
     </>
   );
 };
