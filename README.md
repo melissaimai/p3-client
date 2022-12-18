@@ -8,6 +8,20 @@
 > This website was created for the Ironhack's final project in the Web Development Bootcamp.
 
 
+## 🚀 Features already launched
+* Authentication - Signup, Login
+* Sell a product
+* Edit a product
+* Delete a product
+* Search a product
+* Update your profile
+* See other users profile
+* See your own product list
+* See specific product list through user's profile
+* Buy a product, payment part integrated with Stripe
+* Orders list
+* Sold tag in unavaible products, with disabled option to buy again
+
 ## 💻 Technologies - MERN stack
 
 This is a Full-stack application using the MERN stack
@@ -31,10 +45,14 @@ This is a Full-stack application using the MERN stack
 | Send email for suggestion in the footer area                   |  ⏳  |
 | Add products to the wishlist                                   |  💡  |
 | Question box in the product detail                             |  💡  |
+| Filter the product                                             |  💡  |
+| Change the product list view                                   |  💡  |
 | Notification area, when a seller's product receives a question |  💡  |
 | Dark mode option                                               |  💡  |
 | Follow an user and see followers in the profile page           |  💡  |
 | User private messaging                                         |  💡  |
+| Income balance for sales                                       |  💡  |
+| Sales list for sellers                                         |  💡  |
 | Refactor the code                                              |  💡  |
 
 * ✅ = Ready to use
