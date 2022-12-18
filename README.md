@@ -35,7 +35,7 @@ This is a Full-stack application using the MERN stack
 ![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![image](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-## Feature set
+## 📝 Feature set
 
 🚧 This project is still in progress, so we have many features soon to come! Some lines of code still needs to be improved too. For reference, here's the complete roadmap of current and upcoming features:
 
