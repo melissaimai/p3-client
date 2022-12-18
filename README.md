@@ -6,7 +6,8 @@
 <kbd>
 <img src="https://res.cloudinary.com/drtyf5i7d/image/upload/v1671319048/snapshot_g32suf.png" alt="snapshot">
 </kbd>
-
+<br /> 
+<br /> 
 > This website was created for the Ironhack's final project in the Web Development Bootcamp.
 
 
