@@ -27,6 +27,9 @@
 * Orders list
 * Sold tag in unavaible products, with disabled option to buy again
 
+## Testing interactively
+* When testing interactively, use a card number as 4242 4242 4242 4242.
+
 ## 💻 Technologies - MERN stack
 
 This is a Full-stack application using the MERN stack
