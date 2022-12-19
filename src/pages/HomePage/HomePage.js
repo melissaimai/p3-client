@@ -1,5 +1,5 @@
-import Footer from "./Footer";
-import CarouselComponent from "./CarouselComponent";
+
+import CarouselComponent from "../../components/Carousel/CarouselComponent";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
@@ -43,7 +43,6 @@ const HomePage = () => {
         </div>
       </div>
 
-      <Footer />
     </div>
   )
 }

@@ -37,7 +37,7 @@ function ProfilePage() {
   }
 
   return (
-    <div className="profile-page">
+    <div>
       <ProfileDetails userInfo={userInfo} user={user} setUserInfo={setUserInfo} />
     </div>
 

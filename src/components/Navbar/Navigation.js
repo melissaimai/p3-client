@@ -11,7 +11,7 @@ import { faRightFromBracket, faUser, faBagShopping, faStore, } from '@fortawesom
 import logo from "./images/logo.png"
 import "./Navigation.css"
 import axios from "axios";
-import defaultImage from "../ProfilePage/pngegg.png"
+import defaultImage from "../../assets/pngegg.png"
 
 const Navigation = () => {
 
@@ -40,26 +40,13 @@ const Navigation = () => {
       style={{ width: '40px' }}
     />)
 
-  // useEffect(() => {
-  //   const storedToken = localStorage.getItem("authToken");
-  //   axios
-  //     .get(`${process.env.REACT_APP_SERVER_URL}/api/profile/${userId}`, {
-  //       headers: { Authorization: `Bearer ${storedToken}` },
-  //     })
-  //     .then((response) => {
-  //       setUser(response.data);
-  //     });
-  // }, []);
-
-  // console.log(userUpdated)
-
   return (
     <div className='Navigation'>
       <Navbar expand="lg" className="color-nav">
         <Container>
           <Navbar.Brand style={{ fontWeight: 'bold', color: "#d74f23" }} href="/">
             <img className="pr-1" style={{ width: "40px" }} src={logo} alt="logo" />MyStore</Navbar.Brand>
-          <Navbar.Brand className="btn btn-outline-light" style={{ fontWeight: 'bold', fontSize: '19px' }} href="/products">Browse</Navbar.Brand>
+          <Navbar.Brand className="browse-nav btn btn-outline-light" style={{ fontWeight: 'bold', fontSize: '19px' }} href="/products">Browse</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           {isLoggedIn && (
             <Navbar.Collapse id="basic-navbar-nav">
@@ -78,7 +65,6 @@ const Navigation = () => {
                 <NavDropdown.Item href={`/profile/${user?._id}`}><FontAwesomeIcon icon={faUser} className="pr-1" /> My profile</NavDropdown.Item>
                 <NavDropdown.Item href="/orders"><FontAwesomeIcon icon={faBagShopping} className="pr-1" /> My Orders</NavDropdown.Item>
                 <NavDropdown.Item href="/mylist"><FontAwesomeIcon icon={faStore} className="pr-1" />My items</NavDropdown.Item>
-                {/* <NavDropdown.Item href="/product/new">Sell Now</NavDropdown.Item> */}
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={logOutUser} href="/"> <FontAwesomeIcon icon={faRightFromBracket} /> Logout</NavDropdown.Item>
               </NavDropdown>}

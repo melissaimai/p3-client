@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage/HomePage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import SignupPage from './pages/SignupPage/SignupPage';
 import LoginPage from './pages/LoginPage/LoginPage';
-import Navigation from '../src/pages/HomePage/Navigation';
+import Navigation from '../src/components/Navbar/Navigation';
 import IsPrivate from './components/IsPrivate/IsPrivate';
 import IsAnon from './components/IsAnon/IsAnon';
 import Sell from './pages/Products/Sell';
@@ -16,7 +16,8 @@ import ProfileEdit from './pages/ProfilePage/ProfileEdit';
 import NotFound from './slices/NotFound';
 import Orders from './pages/Products/Orders';
 import ComingSoon from './slices/ComingSoon';
-import AboutMe from './pages/HomePage/AboutMe';
+import AboutMe from './pages/About/AboutMe';
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -119,6 +120,8 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 }

@@ -8,3 +8,10 @@
   background-size: cover;
 
 }
+
+@media (max-width:920px) {
+  #carousel-item {
+    height: 5vh;
+  min-height: 200px;
+  }
+}

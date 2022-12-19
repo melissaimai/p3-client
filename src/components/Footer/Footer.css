@@ -1,12 +1,13 @@
 @font-face {
   font-family: "ElMessiri-SemiBold";
-  src: url(".././SignupPage/fonts/el_messiri/ElMessiri-SemiBold.ttf") }
+  src: url("../../pages/SignupPage/fonts/el_messiri/ElMessiri-SemiBold.ttf") }
+  /* src: url(".././SignupPage/fonts/el_messiri/ElMessiri-SemiBold.ttf") } */
 @font-face {
   font-family: "Montserrat-Regular";
-  src: url(".././SignupPage/fonts/montserrat/Montserrat-Regular.ttf"); }
+  src: url("../../pages/SignupPage/fonts/montserrat/Montserrat-Regular.ttf"); }
 @font-face {
   font-family: "Montserrat-SemiBold";
-  src: url(".././SignupPage/fonts/montserrat/Montserrat-SemiBold.ttf"); }
+  src: url("../../pages/SignupPage/fonts/montserrat/Montserrat-SemiBold.ttf"); }
 
 .footer-dark {
   padding:50px 0;
