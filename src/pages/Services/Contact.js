@@ -43,11 +43,11 @@ const Contact = () => {
                 <div className="row">
                   <div className="col-md-6 form-group mb-3">
                     <label className="contact-col-form-label">Name *</label>
-                    <input type="text" className="form-control" value={toSend.from_name} onChange={handleChange} name="from_name" placeholder="Your name" />
+                    <input type="text" className="form-control contact" value={toSend.from_name} onChange={handleChange} name="from_name" placeholder="Your name" />
                   </div>
                   <div className="col-md-6 form-group mb-3">
                     <label className="contact-col-form-label">Email</label>
-                    <input type="text" className="form-control" name="email" value={toSend.email}
+                    <input type="text" className="form-control contact" name="email" value={toSend.email}
                       onChange={handleChange} placeholder="Your email" />
                   </div>
                 </div>
@@ -67,7 +67,7 @@ const Contact = () => {
                 <div className="row">
                   <div className="col-md-12 form-group mb-3">
                     <label htmlFor="message" className="contact-col-form-label">Message *</label>
-                    <textarea className="form-control" name="message" value={toSend.message}
+                    <textarea className="form-control contact pb-2 mb-2" name="message" value={toSend.message}
                       onChange={handleChange} cols="30" rows="4"
                       placeholder="Write your message"></textarea>
                   </div>

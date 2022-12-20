@@ -18,21 +18,21 @@ text-align: start;
   font-size: 32px;
   margin-bottom: 30px}
 
-.form-control {
+.form-control.contact {
   border: none !important;
   border-bottom: 1px solid #ccc !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
   border-radius: 0 !important;
   background: none !important; }
-  .form-control:active, .form-control:focus {
+  .form-control.contact:active, .form-control.contact:focus {
     outline: none !important;
     -webkit-box-shadow: none;
     box-shadow: none;
     border-color: #000; 
     }
 
-.contact-btn, .form-control, .custom-select {
+.contact-btn, .form-control.contact, .custom-select {
   height: 45px;
   border-radius: 0; }
 
