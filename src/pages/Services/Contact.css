@@ -7,8 +7,8 @@
   padding-top: 50px  !important;
 margin-bottom: 120px;
 margin-top: 50px;
-margin-left:200px;
-margin-right:200px;
+margin-left:200px ;
+margin-right:200px ;
 text-align: start;
   }
 
@@ -92,9 +92,14 @@ text-align: start;
 
 @media (max-width: 1199.98px) {
   .contact-wrap .contact-info {
-    height: 400px !important; } }
+    height: 400px ; } 
   .contact-wrap .contact-info h3 {
     color: #fff;
     font-size: 20px;
     margin-bottom: 30px 
   }
+  .contact-content{
+    margin-left:50px;
+    margin-right:50px;
+  }
+}
