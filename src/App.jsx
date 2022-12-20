@@ -18,6 +18,7 @@ import Orders from './pages/Products/Orders';
 import ComingSoon from './slices/ComingSoon';
 import AboutMe from './pages/About/AboutMe';
 import Footer from './components/Footer/Footer'
+import Contact from './pages/Services/Contact';
 
 function App() {
   return (
@@ -119,6 +120,9 @@ function App() {
         <Route path="/aboutme" element={<AboutMe />} />
 
         <Route path="*" element={<NotFound />} />
+
+        <Route path="/contact" element={<Contact />} />
+
       </Routes>
 
       <Footer />

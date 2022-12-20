@@ -63,7 +63,7 @@ const MyList = () => {
         </ol>
       </nav>
 
-      <div className="row m-4 mt-lg-3">
+      <div className="row mt-lg-3">
         {!isLoading ? (
           productList.map((product) => {
             if (product.createdBy._id === user._id) {

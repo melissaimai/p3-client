@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="col-sm-6 col-md-3 item">
               <h3 style={{ fontSize: "22px" }}>Services</h3>
               <ul>
-                <li><a style={{ fontSize: "15px" }} href="/">Suggestions</a></li>
+                <li><a style={{ fontSize: "15px" }} href="/contact">Contact</a></li>
               </ul>
             </div>
             <div className="col-sm-6 col-md-3 item" >
