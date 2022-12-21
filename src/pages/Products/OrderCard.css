@@ -1,0 +1,93 @@
+table {
+  border-collapse: collapse;
+  width: 30%;
+  margin-top: 15px;
+  margin-left: 35%;
+}
+
+tbody {
+  color: #b4b4b4;
+}
+
+td {
+  padding-block: 0.125em;
+}
+
+.accordion-body{
+padding-left: 3rem;
+}
+
+.ordercard-tfoot {
+  border-top: 1px solid #b4b4b4;
+  font-weight: 600;
+}
+
+.ordercard-tr{
+padding: 8px;
+}
+
+.ordercard-address{
+margin-top: 35px;
+border-radius: 1em;
+  background-color: 
+  #fc8080;
+  color: #fff;
+  padding: 1em;
+  width: 30%;
+  margin-left: 35%;
+}
+
+.ordercard-ordernumber{
+background-color: #eeeeee;
+color:black;
+font-weight: bold;
+}
+
+.usercard-order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  .card-center{
+    width: 30%;
+    margin-top: 15px;
+  }
+  address {
+    font-style: normal;
+  }
+  .orderdate{
+  margin-left: 60%;
+  }
+  .titlebox{
+  width: 200px;
+  margin-left: 10px;
+  }
+  
+  
+@media (max-width: 844px) {
+  table{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .accordion-body{
+    padding-left: 0px;
+  }
+  .ordercard-tr{
+    word-wrap: break-word;
+    max-width: 11rem;
+  }
+  .ordercard-ordernumber{
+    width: 0px;
+  }
+  .ordercard-address{
+    width: 100%;
+    margin-left: 0;
+  }  
+  .card-center{
+    width: 100%;
+  }    
+  .orderdate{
+    margin-left: 0%;
+    margin-right: 15px;
+  }
+}

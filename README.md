@@ -23,8 +23,8 @@
 * See other users profile
 * See your own product list
 * See specific product list through user's profile
-* Buy a product, payment part integrated with Stripe
-* Orders list
+* Buy a product, payment part integrated with STRIPE
+* Orders list, database receiving data from STRIPE after paid orders
 * Sold tag in unavaible products, with disabled option to buy again
 
 ## Testing interactively

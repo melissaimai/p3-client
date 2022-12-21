@@ -2,7 +2,8 @@ import Accordion from 'react-bootstrap/Accordion';
 import { useState, useEffect } from "react";
 import axios from "axios";
 import UserCard from '../ProfilePage/UserCard';
-import "./Orders.css"
+import "./OrderCard.css"
+import moment from 'moment';
 
 const OrderCard = ({ item }) => {
   const productId = (item.product[0]?._id)
@@ -41,39 +42,43 @@ const OrderCard = ({ item }) => {
                 src={product?.img}
               />
             </div>
-            <div>
+            <div className='titlebox'>
               <div className='pb-1'>{product?.title}</div>
               <div>€ {item?.total}</div>
             </div>
+            <div className='orderdate'>
+              <div>Date: {moment(item?.createdAt).format('DD/MM/YYYY')}</div>
+            </div>
           </Accordion.Header>
-          <Accordion.Body className='pl-5'>
-            <div className='mb-5'>
+          <Accordion.Body >
+            <div className=' mb-5'>
               <h3 className='mb-5'>Shopping Bill</h3>
-              <table>
-                <tbody>
-                  <tr className='ordercard-ordernumber' >
-                    <td className='ordercard-tr' align="left"> Order Number #</td>
-                    <td className='ordercard-tr' align="right">{item?._id}</td>
-                  </tr>
-                  <tr>
-                    <td align="left">Product Price</td>
-                    <td align="right">€ {item?.subtotal}</td>
-                  </tr>
+              <div>
+                <table>
+                  <tbody>
+                    <tr className='ordercard-ordernumber' >
+                      <td className='ordercard-tr' align="left"> Order Number #</td>
+                      <td className='ordercard-tr' align="right">{item?._id}</td>
+                    </tr>
+                    <tr>
+                      <td align="left">Product Price</td>
+                      <td align="right">€ {item?.subtotal}</td>
+                    </tr>
 
-                  <tr>
-                    <td align="left"> Shipping fee</td>
-                    <td align="right">€ {(item?.total - item?.subtotal).toFixed(2)}</td>
-                  </tr>
+                    <tr>
+                      <td align="left"> Shipping fee</td>
+                      <td align="right">€ {(item?.total - item?.subtotal).toFixed(2)}</td>
+                    </tr>
 
-                </tbody>
-                <tfoot className='ordercard-tfoot'>
-                  <tr>
-                    <td align="left">Total</td>
-                    <td align="right">€ {item?.total}</td>
-                  </tr>
-                </tfoot>
-              </table>
-
+                  </tbody>
+                  <tfoot className='ordercard-tfoot'>
+                    <tr>
+                      <td align="left">Total</td>
+                      <td align="right">€ {item?.total}</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
               <div className='ordercard-address'>
                 <h4>Address</h4>
 
