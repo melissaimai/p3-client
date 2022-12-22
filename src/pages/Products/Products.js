@@ -53,7 +53,7 @@ const Products = () => {
       </nav>
 
       <div className="row mt-lg-3">
-        {!isLoading ? productList.map((product) => {
+        {!isLoading ? productList.reverse().map((product) => {
           return <ProductCard key={product._id} product={product} />;
         }) : <Loading />}
       </div>

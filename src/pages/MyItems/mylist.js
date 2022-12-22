@@ -3,8 +3,6 @@ import Search from '../Products/Search';
 import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import ScrollToTopOnMount from '../../components/ScrollToTopOnMount';
-// import { faMagnifyingGlass, faList, faGripVertical } from '@fortawesome/free-solid-svg-icons'
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProductCard from '../Products/ProductCard';
 import '../Products/ProductCard.css';
 import { AuthContext } from '../../context/auth.context.jsx';
@@ -65,7 +63,7 @@ const MyList = () => {
 
       <div className="row mt-lg-3">
         {!isLoading ? (
-          productList.map((product) => {
+          productList.reverse().map((product) => {
             if (product.createdBy._id === user._id) {
               return <ProductCard key={product._id} product={product} />;
             }

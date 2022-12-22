@@ -10,7 +10,7 @@ import IsAnon from './components/IsAnon/IsAnon';
 import Sell from './pages/Products/Sell';
 import Products from './pages/Products/Products';
 import ProductDetail from './pages/Products/ProductDetail';
-import MyList from './pages/ProfilePage/mylist';
+import MyList from './pages/MyItems/mylist';
 import ProductEditParentComponent from './pages/Products/ProductEditParentComponent';
 import ProfileEdit from './pages/ProfilePage/ProfileEdit';
 import NotFound from './slices/NotFound';
@@ -18,7 +18,7 @@ import Orders from './pages/Products/Orders';
 import ComingSoon from './slices/ComingSoon';
 import AboutMe from './pages/About/AboutMe';
 import Footer from './components/Footer/Footer'
-import Contact from './pages/Services/Contact';
+import Contact from './pages/Contact/Contact';
 
 function App() {
   return (

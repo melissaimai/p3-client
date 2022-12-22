@@ -91,7 +91,7 @@ const ProfileDetails = (props) => {
                     <h6 className="mb-2 mt-4" style={{ fontWeight: "bold", color: "#d74f23", fontSize: 25 }}>User Product List</h6>
                   </div>
                   <div className="product-profile row">
-                    {!isLoading ? products.map((product) => {
+                    {!isLoading ? products.reverse().map((product) => {
                       if (product.createdBy._id === userInfo._id) {
                         return <ProductCard key={product._id} product={product} />;
                       }
