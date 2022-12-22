@@ -50,8 +50,8 @@ This is a Full-stack application using the MERN stack
 | Feature / Improvement                                          | Status|
 | ---------------------------------------------------------------| ---   |
 | Fix checkout session when user is not logged                   |  ✅  |
-| Send email for suggestion in the footer area                   |  ⏳  |
-| Add products to the wishlist                                   |  💡  |
+| Send email for suggestion in the footer area                   |  ✅  |
+| Add products to the wishlist                                   |  ⏳  |
 | Question box in the product detail                             |  💡  |
 | Filter the product                                             |  💡  |
 | Change the product list view                                   |  💡  |

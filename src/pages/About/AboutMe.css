@@ -1,12 +1,12 @@
 #about-section {
-  background: rgba(32, 33, 36, 0.1);
+  background-color: #fff;
   position: relative;
+  margin: 50px
 }
 
 .blockabout {
   padding: 20px;
   background: white;
-  margin-left: 50px;
 }
 
 .blockabout-inner {
@@ -28,24 +28,30 @@
   transition: all 0.3s;
 }
 
-.rey-btn {
-  border: 2px solid #070707;
-  padding: 10px 40px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 13px;
-  font-weight: 700;
-  border-radius: 50px;
-  transition: all 0.3s;
+.imagebox{
+  display: flex;
+  justify-content: center;
 }
 
 .potoaboutwrap{
-width: 400px;
-padding: 50px;
-margin-left: 70px;
-
+width: 300px;
+padding: 30px;
 }
 
 .imagepotoaboutwrap{
   border-radius: 20px;
+}
+
+
+@media (max-width: 1199.98px) {
+  #about-section {
+    width: 350px; 
+    margin:auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  } 
+  .potoaboutwrap{
+    width: auto;
+    padding: 25px;
+  }
 }
